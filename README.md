@@ -22,7 +22,7 @@ All you need to do is install makefile extensions and then write make in termina
  </li>
 </ul>
 
-### maior.c
+### Maior.c
 <p>Compare two files and gives the bigger one</p>
 <ul>
  <li>Exemple:
