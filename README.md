@@ -21,6 +21,7 @@ All you need to do is install makefile extensions and then write make in termina
   </ul>
  </li>
 </ul>
+
 ### maior.c
 <p>Compare two files and gives the bigger one</p>
 <ul>
