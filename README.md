@@ -13,7 +13,10 @@ All you need to do is install makefile extensions and then write make in termina
 - info
 - version
 - exit
-- 
+- remover
+- setx
+- isjpeg
+- PS1=
 
 ## Functions explanation:
 ### Calc.c:
