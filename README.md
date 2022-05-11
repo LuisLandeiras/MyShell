@@ -8,13 +8,13 @@ All you need to do is install makefile extensions and then write make in termina
 ### Calc.c:
 <p>A feature that do simple math calculations and binary maths.</p>
 <ul>
- <li>Exemple:
+ <li>Example:
    <ul>
      <li>Input: calc 2 + 4</li>
      <li>Output: bits 6</li>
    </ul>
  </li>
- <li>Exemple(with bits):
+ <li>Example(with bits):
   <ul>
    <li>Input: 2 & 3</li>
    <li>Output: 2</li>
@@ -25,7 +25,7 @@ All you need to do is install makefile extensions and then write make in termina
 ### Maior.c
 <p>Compare two files and gives the bigger one</p>
 <ul>
- <li>Exemple:
+ <li>Example:
    <ul>
      <li>Input: maior file1(20Kb) file2(12Kb)</li>
      <li>Output: file1</li>
