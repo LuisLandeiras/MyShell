@@ -10,8 +10,8 @@ All you need to do is install makefile extensions and then write make in termina
   Exemple:\
    Input: calc 2 + 4\
    Output: 6\
-  Exemple(with bits math):
-   Input: bits 2 & 3 
+  Exemple(with bits math):\
+   Input: bits 2 & 3\
    Output: 2
     
     
