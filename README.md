@@ -5,7 +5,7 @@ MyShell is a simple shell used to recreate and understand how the comands of the
 All you need to do is install makefile extensions and then write make in terminal. After that a file named soshell will be created and like every c program you do ./soshell to run the code.
 
 ## Functions explanation:
-- Calc.c:\
+Calc.c:\
  A feature that do simple math calculations and binary maths.\
   Exemple:\
    Input: calc 2 + 4\
