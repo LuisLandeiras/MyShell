@@ -6,7 +6,7 @@ All you need to do is install makefile extensions and then write make in termina
 
 ## Functions explanation:
 ### Calc.c:
-<p>A feature that do simple math calculations and binary maths.</p><br>
+<p>A feature that do simple math calculations and binary maths.</p>
 <ul>
  <li>Exemple:
    <ul>
@@ -14,7 +14,7 @@ All you need to do is install makefile extensions and then write make in termina
      <li>Output: 6</li>
    </ul>
  </li>
- <li>Exemple(with bits)
+ <li>Exemple(with bits):
   <ul>
    <li>Input: 2 & 3</li>
    <li>Output: 2</li>
