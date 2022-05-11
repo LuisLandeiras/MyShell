@@ -4,6 +4,8 @@ MyShell is a simple shell used to recreate and understand how the comands of the
 ## How to compile the shell?
 All you need to do is install makefile extensions and then write make in terminal. After that a file named soshell will be created and like every c program you do ./soshell to run the code.
 
-##Functions explanation:
+## Functions explanation:
+ - Calc.c
+    
 
 
