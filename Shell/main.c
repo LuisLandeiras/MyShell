@@ -1,6 +1,14 @@
 #include "shell.h"
 
 char prompt[100];
+int maior();
+void calc();
+void bits();
+int redirects();
+int prop();
+int isjpeg();
+int rmr();
+void wait();
 
 int main ()
 {
@@ -32,21 +40,15 @@ int main ()
 
 int builtin (char **args)
 {
-  //argumento usado para sair da shell
+  //usado para sair da shell
   if (strcmp (args[0], "exit") == 0)
   {
     exit (0);
     return 1;
   }
 
-  if (strncmp (args[0], "42", 2) == 0)
-  {
-    printf ("42 is the answer to life the universe and everything\n");
-    return 1;
-  }
-
-  //argumento usado para indicar a versão atual da shell
- if (0 == strcmp(args[0], "info"))
+  //usado para indicar a versão atual da shell
+  if (0 == strcmp(args[0], "info"))
   {
     printf("SoShell 2020 versão 1.0\n");
     return 1;
@@ -58,15 +60,15 @@ int builtin (char **args)
     return 1;
   }
 
-  //argumento usado para mostrar informações sobre o utilizador
+  //usado para mostrar informações sobre o utilizador
   if (0 == strcmp(args[0], "me"))
   {
     system("id");
     return 1;
   }
 
-  //argumento usado para se movimentar entre diretorias
-  if (0 == strcmp(args[0], "cd"))
+  //usado para se movimentar entre diretorias
+  if (0 == strcmp(args[0], "mycd"))
   {
     int err;
     if(NULL == args[1] || strcmp(args[1], "~")==0){
@@ -81,20 +83,20 @@ int builtin (char **args)
     return 1;
   }
 
-  //argumento usado para fazer calculos matematicos simples
+  //usado para fazer calculos matematicos simples
   if (0 == strcmp(args[0], "calc")){
     calc(args[1], args[2], args[3]);
     return 1;
   }
 
-  //argumento usado para efetuar calculos binarios
+  //usado para efetuar calculos binarios
   if (0 == strcmp(args[0], "bits")){
     bits(args[1], args[2], args[3]);
     return 1;
   }
 
-  //argumento semelhante ao cat do linux 
-  if (0 == strcmp(args[0], "cat"))
+  //semelhante ao cat do linux 
+  if (0 == strcmp(args[0], "mycat"))
   {
     if (0 == strcmp(args[2], ">") || 0 == strcmp(args[2], ">>") || 0 == strcmp(args[2], "2>") || 0 == strcmp(args[2], "<") || NULL == args[2])
     {
@@ -103,7 +105,7 @@ int builtin (char **args)
     }
   }
   
-  //argumento usado para verificar se um ficheiro é um jpeg
+  //usado para verificar se um ficheiro é um jpeg
   if (0 == strcmp(args[0], "isjpeg"))
   {
     isjpeg(args[1]);
@@ -128,15 +130,21 @@ int builtin (char **args)
     return 1;
   }
 
-  //argumento usado para verificar qual o maior de dois ficheiros
+  //usado para verificar qual o maior de dois ficheiros
   if(0 == strcmp(args[0], "maior")){
     maior(args[1], args[2]);
     return 1;
   }
 
-  //argumento que modifica a propriedade de um ficheiro
-  if(0 == strcmp(args[0], "prop")){
-    propriedade(args[1]);
+  //Torna um ficheiro executavel
+  if(0 == strcmp(args[0], "setx")){
+    setx(args[1]);
+    return 1;
+  }
+
+  //usado para remover a leitura de um ficheiro
+  if(0 == strcmp(args[0], "remover")){
+    rmr(args[1]);
     return 1;
   }
   return 0;

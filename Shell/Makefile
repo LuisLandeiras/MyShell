@@ -10,7 +10,7 @@
 CC=cc
 FLAGS=-c -Wall
 LIBS=-lm
-OBS=main.o execute.o parse.o calc.o redirects.o aviso.o jpeg.o maior.o propriedade.o -lpthread
+OBS=main.o execute.o parse.o calc.o redirects.o aviso.o jpeg.o maior.o setx.o -lpthread
 
 #Alvo por defeito é o primeiro
 all :  soshell
@@ -31,11 +31,11 @@ jpeg.o : shell.h jpeg.c
 	$(CC) $(FLAGS) jpeg.c
 maior.o : shell.h maior.c
 	$(CC) $(FLAGS) maior.c
-propriedade.o : shell.h propriedade.c
-	$(CC) $(FLAGS) propriedade.c
+setx.o : shell.h setx.c
+	$(CC) $(FLAGS) setx.c
 soshell : $(OBS)
 	$(CC)  -o soshell  $(OBS) $(LIBS)
 clean limpar:
-	rm -f soshell *.o
+	rm -f *.o
 	rm -f *~
 	echo "Limpeza dos ficheiros exectuaveis, objectos e gedit tralha"
