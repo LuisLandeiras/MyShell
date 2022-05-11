@@ -6,13 +6,22 @@ All you need to do is install makefile extensions and then write make in termina
 
 ## Functions explanation:
 ### Calc.c:
- <p>A feature that do simple math calculations and binary maths.</p><br>
- - Exemple:
-   - Input: calc 2 + 4
-   - Output: 6
- - Exemple(with bits): 
-   - Input: bits 2 & 3
-   - Output: 2
+<p>A feature that do simple math calculations and binary maths.</p><br>
+<ul>
+ <li>Exemple:
+   <ul>
+     <li>Input: 2 + 4</li>
+     <li>Output: 6</li>
+   </ul>
+ </li>
+ <li>Exemple(with bits)
+  <ul>
+   <li>Input: 2 & 3</li>
+   <li>Output: 2</li>
+  </ul>
+ </li>
+</ul>
+  
     
     
 
