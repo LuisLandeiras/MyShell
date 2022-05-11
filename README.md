@@ -7,7 +7,7 @@ All you need to do is install makefile extensions and then write make in termina
 ## Functions explanation:
 Calc.c:\
  A feature that do simple math calculations and binary maths.\
-  >Exemple:\
+ »Exemple:\
    >>Input: calc 2 + 4\
    >>Output: 6\
   >Exemple(with bits math):\
