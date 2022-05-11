@@ -10,8 +10,8 @@ All you need to do is install makefile extensions and then write make in termina
 <ul>
  <li>Exemple:
    <ul>
-     <li>Input: 2 + 4</li>
-     <li>Output: 6</li>
+     <li>Input: calc 2 + 4</li>
+     <li>Output: bits 6</li>
    </ul>
  </li>
  <li>Exemple(with bits):
@@ -19,6 +19,16 @@ All you need to do is install makefile extensions and then write make in termina
    <li>Input: 2 & 3</li>
    <li>Output: 2</li>
   </ul>
+ </li>
+</ul>
+### maior.c
+<p>Compare two files and gives the bigger one</p>
+<ul>
+ <li>Exemple:
+   <ul>
+     <li>Input: maior file1(20Kb) file2(12Kb)</li>
+     <li>Output: file1</li>
+   </ul>
  </li>
 </ul>
   
