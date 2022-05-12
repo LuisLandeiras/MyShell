@@ -11,7 +11,6 @@ int containspipe(int numArgs, char **args){
 }
 int main()
 {
-
     char *myargs[]= { "ls", "-l" , "-a", NULL};
 
     int indice, pidFilho, fd[2], numArgs;
