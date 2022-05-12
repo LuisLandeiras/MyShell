@@ -1,22 +1,27 @@
 # MyShell
-MyShell is a simple shell used to recreate and understand how the comands of the shell, for exemple cat or cd from linux terminak, work.
+<p>MyShell is a simple shell used to recreate and understand how the comands of the shell from linux terminal work.</p>
 
 ## How to compile the shell?
-All you need to do is install makefile extensions and then write make in terminal. After that a file named soshell will be created and like every c program you do ./soshell to run the code.
+<p>All you need to do is install makefile extensions and then write make in terminal. After that a file named soshell will be created and like every c program you do ./soshell to run the code. To clear de trash files just do make clean.</p>
 
 ## Commands available:
-- mycd
-- mycat
-- maior
-- calc
-- bits
-- info
-- version
-- exit
-- remover
-- setx
-- isjpeg
-- PS1=
+- aviso;
+- bits;
+- calc;
+- exit;
+- info;
+- isjpeg;
+- maior;
+- mycd;
+- version;
+- remover;
+- setx;
+- PS1=.
+
+## Future features:
+- mycat;
+- copy;
+- pipes.
 
 ## Functions explanation:
 ### Calc.c:
@@ -37,7 +42,7 @@ All you need to do is install makefile extensions and then write make in termina
 </ul>
 
 ### Maior.c
-<p>Compare two files and gives the bigger one</p>
+<p>Compare two files and gives the bigger one.</p>
 <ul>
  <li>Example:
    <ul>
@@ -46,6 +51,37 @@ All you need to do is install makefile extensions and then write make in termina
    </ul>
  </li>
 </ul>
+
+### Jpeg.c
+<p>Verify if a file is jpeg or not.</p>
+<ul>
+  <li>Example:
+    <ul>
+      <li>Input: isjpeg img.jpeg</li>
+      <li>Output: Is jpeg</li>
+    </ul>
+  </li>
+</ul>
+
+### Aviso.c
+<p>Here you can put a costumized warning where you set the message and the time. When the time is up the message will show up in the shell. While the message is waiting to show up you can use the shell normally</p>
+<ul>
+  <li>Example:
+    <ul>
+      <li>Input: aviso hello 5</li>
+      <li>*after 5 seconds*</li>
+      <li>output: hello</li>
+    </ul>
+  </li>
+</ul>    
+
+### Feature mycd 
+<p>Used for "walk" between directories</p>
+
+
+
+
+
   
     
     
