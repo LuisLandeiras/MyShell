@@ -2,9 +2,9 @@
    execute . cria um processo prog�nito e executa um programa
 */
 #include "shell.h"
+int wait();
 
-void execute (char **args)
-{
+void execute (char **args){
   int pid, status;
 
   if ((pid = fork ()) < 0)

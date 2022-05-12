@@ -1,14 +1,17 @@
 #include "shell.h"
 
 char prompt[100];
-int maior();
+void * avisowrapper();
+void wait();
 void calc();
 void bits();
+void copy();
+int maior();
 int redirects();
 int prop();
 int isjpeg();
 int rmr();
-void wait();
+int setx();
 
 int main ()
 {
@@ -16,7 +19,7 @@ int main ()
   char linha[1024];/* um comando */
   char *args[64];/* com um maximo de 64 argumentos */
 
-  strcpy (prompt, "MYSHELL: prompt>");
+  strcpy (prompt, "MYSHELL>");
   while (1)
   {
     printf ("%s", prompt);
@@ -111,11 +114,11 @@ int builtin (char **args)
     isjpeg(args[1]);
     if (1 == isjpeg(args[1]))
     {
-      printf("É um jpeg\n");
+      printf("Is a jpeg\n");
     }
     else
     {
-      printf("Não é um jpeg\n");
+      printf("Is not a jpeg\n");
     }
     return 1;
   }
@@ -126,7 +129,7 @@ int builtin (char **args)
     aviso_t * ptr = (aviso_t *)malloc(sizeof(aviso_t));
     strcpy(ptr->msg, args[1]);
     ptr->tempo=atoi(args[2]);
-    pthread_create(&th, NULL, avisowrapper(aviso()), (void *)ptr);
+    pthread_create(&th, NULL, avisowrapper, (void *)ptr);
     return 1;
   }
 
@@ -147,5 +150,19 @@ int builtin (char **args)
     rmr(args[1]);
     return 1;
   }
+
+  //usado para copiar um ficheiro para outro
+  if(0 == strcmp(args[0], "copy")){
+    copy(args[1], args[2]);
+    return 1;
+  }
   return 0;
 }
+
+/*
+F4 fazer ultimo exercicio
+F5 feita
+F6 fazer
+F7 fazer ultimo exercicio
+F8 fazer ultimo exercicio
+*/
