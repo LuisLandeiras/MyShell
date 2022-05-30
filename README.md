@@ -13,14 +13,14 @@
 - isjpeg;
 - maior;
 - version;
-- remover;
+- removel;
 - setx;
 - PS1=;
 - socp.
 
 ## Future features:
 - mycat;
-- pipes.
+- mycd;
 
 ## Functions explanation:
 ### Calc.c:
