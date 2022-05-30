@@ -12,15 +12,14 @@
 - info;
 - isjpeg;
 - maior;
-- mycd;
 - version;
 - remover;
 - setx;
-- PS1=.
+- PS1=;
+- socp.
 
 ## Future features:
 - mycat;
-- copy;
 - pipes.
 
 ## Functions explanation:
@@ -70,13 +69,13 @@
     <ul>
       <li>Input: aviso hello 5</li>
       <li>*after 5 seconds*</li>
-      <li>output: hello</li>
+      <li>output: Aviso:hello</li>
     </ul>
   </li>
 </ul>    
 
-### Feature mycd 
-<p>Used for "walk" between directories</p>
+### Socp.c
+<p>Function used to copy a file to another</p>
 
 
 
