@@ -16,14 +16,14 @@ void calc(char *value1, char *op, char *value2){
     if(*op == '*'){
         printf("%.3f\n", x*y);
     }
-    if(*op == '/'){
+    if(*op == '/' || *op == '%'){
         if(y == 0){
-            printf("Erro\n");
+            printf("Erro, impossível dividir por 0\n");
         }else{
             printf("%.3f\n", x/y);
         }  
     }
-    if(*op != '/' && *op != '*' && *op != '-' && *op != '+' && *op != '^'){
+    if(*op != '/' && *op != '*' && *op != '-' && *op != '+' && *op != '^' && *op != '%'){
         printf("Erro\n");
     }
 }

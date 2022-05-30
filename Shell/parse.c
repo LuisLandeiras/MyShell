@@ -4,7 +4,7 @@
     parse . particiona o comando Unix (armazenado em buf) em argumentos
 */
 
-void parse (char *buf, char **args)
+int parse (char *buf, char **args)
 {
   while ('\0' != *buf)
     {

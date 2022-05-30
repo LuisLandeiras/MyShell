@@ -10,18 +10,34 @@
 #include <pthread.h>
 #include <ctype.h>
 
-void parse(char *buf, char **args);
+int parse(char *buf, char **args);
 
-void execute(char **args);
+void execute(int numargs, char **args);
 
-int builtin (char **args);
+int builtin (int numargs, char **args);
 
 typedef struct
 {
     char msg[100]; 
     int tempo;
 } aviso_t;
-/* constantes que podem tornar uteis*/
+typedef struct
+{
+    char fonte[100];
+    char destino[100];
+} copiar_t;
 
 #define BG 0
 #define FG 1
+
+void * avisowrapper();
+void * socpwrapper(void *args);
+void calc();
+void bits();
+void maior();
+int redirects();
+int prop();
+int isjpeg();
+int rmr();
+int setx();
+int socp();

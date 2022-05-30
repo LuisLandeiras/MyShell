@@ -1,17 +1,6 @@
 #include "shell.h"
 
 char prompt[100];
-void * avisowrapper();
-void wait();
-void calc();
-void bits();
-void copy();
-int maior();
-int redirects();
-int prop();
-int isjpeg();
-int rmr();
-int setx();
 
 int main ()
 {
@@ -19,7 +8,7 @@ int main ()
   char linha[1024];/* um comando */
   char *args[64];/* com um maximo de 64 argumentos */
 
-  strcpy (prompt, "MYSHELL>");
+  strcpy (prompt, "SOSHELL>");
   while (1)
   {
     printf ("%s", prompt);
@@ -33,15 +22,15 @@ int main ()
       continue;/* linha é apenas \n */
     if (linha[len - 1] == '\n')
       linha[len - 1] = '\0';
-    parse (linha, args);/* particiona a string em argumentos */
+    int numargs = parse(linha, args);/* particiona a string em argumentos */
 
-    if (!builtin (args))
-      execute (args);/* executa o comando */
+    if (!builtin (numargs, args))
+      execute (numargs, args);/* executa o comando */
     }
   return 0;
 }
 
-int builtin (char **args)
+int builtin (int numargs,char **args)
 {
   //usado para sair da shell
   if (strcmp (args[0], "exit") == 0)
@@ -64,7 +53,7 @@ int builtin (char **args)
   }
 
   //usado para mostrar informações sobre o utilizador
-  if (0 == strcmp(args[0], "me"))
+  if (0 == strcmp(args[0], "id"))
   {
     system("id");
     return 1;
@@ -96,16 +85,6 @@ int builtin (char **args)
   if (0 == strcmp(args[0], "bits")){
     bits(args[1], args[2], args[3]);
     return 1;
-  }
-
-  //semelhante ao cat do linux 
-  if (0 == strcmp(args[0], "mycat"))
-  {
-    if (0 == strcmp(args[2], ">") || 0 == strcmp(args[2], ">>") || 0 == strcmp(args[2], "2>") || 0 == strcmp(args[2], "<") || NULL == args[2])
-    {
-      redirects(4,args[2]);
-      return 1;
-    }
   }
   
   //usado para verificar se um ficheiro é um jpeg
@@ -146,22 +125,26 @@ int builtin (char **args)
   }
 
   //usado para remover a leitura de um ficheiro
-  if(0 == strcmp(args[0], "remover")){
+  if(0 == strcmp(args[0], "removel")){
     rmr(args[1]);
     return 1;
   }
 
   //usado para copiar um ficheiro para outro
-  if(0 == strcmp(args[0], "copy")){
-    copy(args[1], args[2]);
+  if (0 == strcmp(args[0], "socp")){
+    pthread_t th;
+    copiar_t *ptr = (copiar_t *)malloc(sizeof(copiar_t));
+    strcpy(ptr->fonte, args[1]);
+    strcpy(ptr->destino, args[2]);
+    pthread_create(&th, NULL, socpwrapper, (void *)ptr);
     return 1;
   }
   return 0;
 }
 
+
 /*
 F4 fazer ultimo exercicio
-F5 feita
 F6 fazer
 F7 fazer ultimo exercicio
 F8 fazer ultimo exercicio
