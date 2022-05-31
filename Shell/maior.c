@@ -20,7 +20,9 @@ void maior(char *value1, char *value2){
     int size2 = FileSize(f2)/1024;
     if(size1 > size2){
         printf("O maior ficheiro é %s e tem o tamanho de %d Kb\n", value1, size1);
-    }   else{
+    }else if(size1 < size2){
         printf("O maior ficheiro é %s e tem o tamanho de %d Kb\n", value2, size2);
+    }else{
+        printf("Os ficheiros tem o mesmo tamanho\n");
     }
 }

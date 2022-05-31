@@ -22,15 +22,15 @@ int main ()
       continue;/* linha é apenas \n */
     if (linha[len - 1] == '\n')
       linha[len - 1] = '\0';
-    int numargs = parse(linha, args);/* particiona a string em argumentos */
+    parse(linha, args);/* particiona a string em argumentos */
 
-    if (!builtin (numargs, args))
-      execute (numargs, args);/* executa o comando */
+    if (!builtin (args))
+      execute (args);/* executa o comando */
     }
   return 0;
 }
 
-int builtin (int numargs,char **args)
+int builtin (char **args)
 {
   //usado para sair da shell
   if (strcmp (args[0], "exit") == 0)
@@ -60,10 +60,10 @@ int builtin (int numargs,char **args)
   }
 
   //usado para se movimentar entre diretorias
-  if (0 == strcmp(args[0], "mycd"))
+  if (0 == strcmp(args[0], "cd"))
   {
     int err;
-    if(NULL == args[1] || strcmp(args[1], "~")==0){
+    if(NULL == args[1] || strcmp(args[1], "~") == 0){
       err = chdir(getenv("HOME"));
     }else{
       err = chdir(args[1]);
@@ -102,12 +102,13 @@ int builtin (int numargs,char **args)
     return 1;
   }
   
+  //usado para mostrar um aviso dado um n tempo com threads
   if (0 == strcmp(args[0], "aviso"))
   {
     pthread_t th;
     aviso_t * ptr = (aviso_t *)malloc(sizeof(aviso_t));
     strcpy(ptr->msg, args[1]);
-    ptr->tempo=atoi(args[2]);
+    ptr->tempo = atoi(args[2]);
     pthread_create(&th, NULL, avisowrapper, (void *)ptr);
     return 1;
   }
@@ -130,8 +131,8 @@ int builtin (int numargs,char **args)
     return 1;
   }
 
-  //usado para copiar um ficheiro para outro
-  if (0 == strcmp(args[0], "socp")){
+  //usado para copiar um ficheiro para outro com threads
+  if (0 == strcmp(args[0], "socpth")){
     pthread_t th;
     copiar_t *ptr = (copiar_t *)malloc(sizeof(copiar_t));
     strcpy(ptr->fonte, args[1]);
@@ -139,13 +140,11 @@ int builtin (int numargs,char **args)
     pthread_create(&th, NULL, socpwrapper, (void *)ptr);
     return 1;
   }
+
+  //usado para copiar um ficheiro para outro sem threads
+  if(0 == strcmp(args[0], "socp")){
+    socp(args[1], args[2]);
+    return 1;
+  }
   return 0;
 }
-
-
-/*
-F4 fazer ultimo exercicio
-F6 fazer
-F7 fazer ultimo exercicio
-F8 fazer ultimo exercicio
-*/

@@ -10,11 +10,9 @@
 #include <pthread.h>
 #include <ctype.h>
 
-int parse(char *buf, char **args);
+void execute(char **args);
 
-void execute(int numargs, char **args);
-
-int builtin (int numargs, char **args);
+int builtin (char **args);
 
 typedef struct
 {
@@ -35,9 +33,12 @@ void * socpwrapper(void *args);
 void calc();
 void bits();
 void maior();
+int wait();
 int redirects();
 int prop();
 int isjpeg();
 int rmr();
 int setx();
 int socp();
+int ultimo();
+int parse();

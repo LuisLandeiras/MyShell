@@ -8,8 +8,7 @@ int setx(char *nome) {
 }
 
 int rmr(char *nome) {
-    struct stat statbuf;
-    if (chmod(nome, (statbuf.st_mode & ~S_IRUSR)) < 0){
+    if (chmod(nome, ~S_IRUSR) < 0){
         return 1;
     }
     return 0;

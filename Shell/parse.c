@@ -4,8 +4,7 @@
     parse . particiona o comando Unix (armazenado em buf) em argumentos
 */
 
-int parse (char *buf, char **args)
-{
+int parse (char *buf, char **args){
   while ('\0' != *buf)
     {
       /* strip whitespace. Usa um NULL para indicar que o argumento anterior e. o ultimo */
@@ -18,5 +17,5 @@ int parse (char *buf, char **args)
         buf++;
     }
   *args = (char *) NULL;/* o ultimo argumento e. NULL */
-  return;
+  return 0;
 }
