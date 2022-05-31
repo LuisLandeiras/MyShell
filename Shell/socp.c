@@ -20,7 +20,7 @@ void copy(char *fonte, char *destino){
     ioCopy(f1, f2);
 }*/
 
-int ioCopy(int IN, int OUT){ // no error reporting
+int ioCopy(int IN, int OUT){
     int n;
     char buf[128];
     while ((n = read(IN, buf, 128)) > 0){
