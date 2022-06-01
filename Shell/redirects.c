@@ -9,7 +9,7 @@ int redirects(int numargs, char *args[])
   if ( numargs < 3) {
     return numargs; //Guard the following section
   }
-  if ( strcmp(args[numargs - 2] , ">") ==0){  //ii redirect stdout >
+  if ( strcmp(args[numargs - 2] , ">") == 0){  //ii redirect stdout >
     int fd = creat(args[numargs - 1], FILE_MODE);
     if (fd < 0){ 
       perror(NULL); 
@@ -20,7 +20,7 @@ int redirects(int numargs, char *args[])
     args[numargs - 2]=NULL ;
     numargs = numargs - 2;
   }
-  if (strcmp(args[numargs - 2], ">>")==0) // verificar caso de append (>>) | tratar do >> open : O_WRONLY | O_APPEND
+  if (strcmp(args[numargs - 2], ">>") == 0) // verificar caso de append (>>) | tratar do >> open : O_WRONLY | O_APPEND
   {
       int fd = open(args[numargs - 1], O_WRONLY | O_APPEND);
       if (fd < 0)
@@ -33,7 +33,7 @@ int redirects(int numargs, char *args[])
       args[numargs - 2]=NULL;
       numargs = numargs - 2;
   } 
-  if (strcmp(args[numargs - 2], "<")==0) // iii tratar do < open : O_RDONLY
+  if (strcmp(args[numargs - 2], "<") == 0) // iii tratar do < open : O_RDONLY
   {
       int fd = open(args[numargs - 1], O_RDONLY);
       if (fd < 0)

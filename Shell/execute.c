@@ -1,16 +1,5 @@
 /*execute . cria um processo prog�nito e executa um programa*/
 #include "shell.h"
-#define FILE_MODE (S_IRUSR | S_IWUSR)
-
-/*int containsRedirect(int numargs, char **args){
-  int index;
-  for (index = 0; index < numargs; index++){
-    if (strcmp(args[index], ">") == 0 || strcmp(args[index], "2>") == 0 || strcmp(args[index], "<") == 0 || strcmp(args[index], ">>") == 0){
-      return index;
-    }
-  }
-  return -1;
-}*/
 
 int ultimo(int *numargs, char **args){
   if (args[*numargs-1][0] == '&'){

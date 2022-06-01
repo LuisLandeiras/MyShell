@@ -10,9 +10,9 @@
 #include <pthread.h>
 #include <ctype.h>
 
+int parse(char *buf, char **args);
 void execute(char **args);
-
-int builtin (char **args);
+int builtin(char **args);
 
 typedef struct
 {
@@ -29,7 +29,7 @@ typedef struct
 #define FG 1
 
 void * avisowrapper();
-void * socpwrapper(void *args);
+void * socpwrapper();
 void calc();
 void bits();
 void maior();
