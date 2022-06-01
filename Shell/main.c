@@ -88,10 +88,11 @@ int builtin (char **args)
     return 1;
   }
   
-  //usado para verificar se um ficheiro é um jpeg(Não funcional) 
+  //usado para verificar se um ficheiro é um jpeg(Funcional) 
   if (0 == strcmp(args[0], "jpeg"))
   {
-    if (isjpeg(args[1]) == 1){
+    int f = open(args[1], O_RDONLY);
+    if (isjpeg(f) == 1){
       printf("Is a jpeg\n");
     }
     else{
