@@ -32,27 +32,28 @@ int main ()
 
 int builtin (char **args)
 {
-  //usado para sair da shell
+  //usado para sair da shell(Funcional)
   if (strcmp (args[0], "exit") == 0)
   {
     exit (0);
     return 1;
   }
 
-  //usado para indicar a versão atual da shell
+  //usado para indicar a versão atual da shell(Funcional)
   if (0 == strcmp(args[0], "info"))
   {
     printf("SoShell 2020 versão 1.0\n");
     return 1;
   }
 
+  //(Funcional)
   if (strlen(args[0])>4 && 0 == strncmp(args[0], "PS1=", 4))
   {
     strcpy(prompt, args[0]+4);
     return 1;
   }
 
-  //usado para mostrar informações sobre o utilizador
+  //usado para mostrar informações sobre o utilizador(Funcional)
   if (0 == strcmp(args[0], "id"))
   {
     system("id");
@@ -75,34 +76,31 @@ int builtin (char **args)
     return 1;
   }
 
-  //usado para fazer calculos matematicos simples
+  //usado para fazer calculos matematicos simples(Funcional)
   if (0 == strcmp(args[0], "calc")){
     calc(args[1], args[2], args[3]);
     return 1;
   }
 
-  //usado para efetuar calculos binarios
+  //usado para efetuar calculos binarios(Funcional)
   if (0 == strcmp(args[0], "bits")){
     bits(args[1], args[2], args[3]);
     return 1;
   }
   
-  //usado para verificar se um ficheiro é um jpeg
-  if (0 == strcmp(args[0], "isjpeg"))
+  //usado para verificar se um ficheiro é um jpeg(Não funcional) 
+  if (0 == strcmp(args[0], "jpeg"))
   {
-    isjpeg(args[1]);
-    if (1 == isjpeg(args[1]))
-    {
+    if (isjpeg(args[1]) == 1){
       printf("Is a jpeg\n");
     }
-    else
-    {
+    else{
       printf("Is not a jpeg\n");
     }
     return 1;
   }
   
-  //usado para mostrar um aviso dado um n tempo com threads
+  //usado para mostrar um aviso dado um n tempo com threads(Funcional)
   if (0 == strcmp(args[0], "aviso"))
   {
     pthread_t th;
@@ -113,25 +111,25 @@ int builtin (char **args)
     return 1;
   }
 
-  //usado para verificar qual o maior de dois ficheiros
+  //usado para verificar qual o maior de dois ficheiros(Funcional)
   if(0 == strcmp(args[0], "maior")){
     maior(args[1], args[2]);
     return 1;
   }
 
-  //Torna um ficheiro executavel
+  //Torna um ficheiro executavel(Não funcional)
   if(0 == strcmp(args[0], "setx")){
     setx(args[1]);
     return 1;
   }
 
-  //usado para remover a leitura de um ficheiro
+  //usado para remover a leitura de um ficheiro(Não funcional)
   if(0 == strcmp(args[0], "removel")){
     rmr(args[1]);
     return 1;
   }
 
-  //usado para copiar um ficheiro para outro com threads
+  //usado para copiar um ficheiro para outro com threads(Funcional)
   if (0 == strcmp(args[0], "socpth")){
     pthread_t th;
     copiar_t *ptr = (copiar_t *)malloc(sizeof(copiar_t));
@@ -141,7 +139,7 @@ int builtin (char **args)
     return 1;
   }
 
-  //usado para copiar um ficheiro para outro sem threads
+  //usado para copiar um ficheiro para outro sem threads(Funcional)
   if(0 == strcmp(args[0], "socp")){
     socp(args[1], args[2]);
     return 1;

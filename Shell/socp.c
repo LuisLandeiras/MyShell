@@ -2,7 +2,7 @@
 
 int ioCopy(int IN, int OUT){
     int n;
-    char buf[128];
+    char buf[128]; // buffer de 128 bytes
     while ((n = read(IN, buf, 128)) > 0){
         if (write(OUT, buf, n) != n){
             perror("Erro de escrita!\n");
@@ -30,7 +30,7 @@ int socp(char *fonte, char *destino){
         }
     }
     else{
-        fo = creat(destino, 0777);
+        fo = creat(destino, 0777); // 0777 que dizer rwx-rwx-rwx-
     }
 
     int i = ioCopy(fi, fo);
