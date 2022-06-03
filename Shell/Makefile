@@ -10,7 +10,7 @@
 CC=cc
 FLAGS=-c -Wall
 LIBS=-lm
-OBS=main.o execute.o parse.o calc.o redirects.o aviso.o jpeg.o maior.o setx.o socp.o -lpthread
+OBS=main.o execute.o parse.o calc.o redirects.o aviso.o jpeg.o maior.o setx.o socp.o openfiles.o -lpthread
 
 #Alvo por defeito é o primeiro
 all :  soshell
@@ -35,6 +35,8 @@ setx.o : shell.h setx.c
 	$(CC) $(FLAGS) setx.c
 socp.o : shell.h socp.c
 	$(CC) $(FLAGS) socp.c
+openfiles.o : shell.h openfiles.c
+	$(CC) $(FLAGS) openfiles.c
 soshell : $(OBS)
 	$(CC)  -o soshell  $(OBS) $(LIBS)
 clean limpar:

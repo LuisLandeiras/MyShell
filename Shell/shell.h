@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <ctype.h>
+#include <errno.h>
 
 int parse(char *buf, char **args);
 void execute(char **args);
@@ -42,3 +43,4 @@ int setx();
 int socp();
 int ultimo();
 int parse();
+int valido();

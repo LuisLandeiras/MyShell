@@ -40,7 +40,7 @@ int builtin (char **args)
   }
 
   //usado para indicar a versão atual da shell(Funcional)
-  if (0 == strcmp(args[0], "info"))
+  if (0 == strcmp(args[0], "obterinfo"))
   {
     printf("SoShell 2020 versão 1.0\n");
     return 1;
@@ -54,7 +54,7 @@ int builtin (char **args)
   }
 
   //usado para mostrar informações sobre o utilizador(Funcional)
-  if (0 == strcmp(args[0], "id"))
+  if (0 == strcmp(args[0], "quemsoueu"))
   {
     system("id");
     return 1;
@@ -143,6 +143,13 @@ int builtin (char **args)
   //usado para copiar um ficheiro para outro sem threads(Funcional)
   if(0 == strcmp(args[0], "socp")){
     socp(args[1], args[2]);
+    return 1;
+  }
+
+  if(0 == strcmp(args[0], "openfiles")){
+    if(valido()){
+      printf("Número de ficheiros abertos: %i\n", valido());
+    }
     return 1;
   }
   return 0;
