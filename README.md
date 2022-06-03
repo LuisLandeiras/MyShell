@@ -16,11 +16,10 @@
 - removel;
 - setx;
 - PS1=;
+- cd;
+- openfiles;
+- socpth;
 - socp.
-
-## Future features:
-- mycat;
-- mycd;
 
 ## Functions explanation:
 ### Calc.c:
